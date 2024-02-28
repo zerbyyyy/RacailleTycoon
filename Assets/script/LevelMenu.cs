@@ -1,12 +1,12 @@
 using UnityEngine;
 
-public class Menu : MonoBehaviour
+public class LevelMenu : MonoBehaviour
 {
-    public GameObject shopcanva;
+    public GameObject level2;
 
     void Start()
     {
-        shopcanva.SetActive(false);
+        level2.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -15,7 +15,7 @@ public class Menu : MonoBehaviour
         if (other.CompareTag("player"))
         {
             Debug.Log("rentrer2");
-            shopcanva.SetActive(true);
+            level2.SetActive(true);
         }
     }
 
@@ -24,8 +24,9 @@ public class Menu : MonoBehaviour
         Debug.Log("sorti");
         if (other.CompareTag("player"))
         {
-            shopcanva.SetActive(false);
+            level2.SetActive(false);
         }
+        
     }
     
 }
