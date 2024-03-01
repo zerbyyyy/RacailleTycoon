@@ -1,6 +1,6 @@
-## Racaille Typecoon
+# Racaille Typecoon
 
-# Explication 
+## Explication 
 
 Racaille Typecoon est un jeux de type Typecoon qui consiste a acheter des entreprise dans le légale et dans l'illégale.
 
