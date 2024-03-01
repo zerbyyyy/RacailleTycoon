@@ -12,9 +12,8 @@ public class PriceManager : MonoBehaviour
 
     public int priceAmount = 100;
 
-    // Update is called once per frame
     void Update()
     {
-        priceText.text = $"{priceAmount} $";
+        priceText.text = $"{priceAmount}$";
     }
 }

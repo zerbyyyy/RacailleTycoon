@@ -7,7 +7,9 @@ public class Upgrade : MonoBehaviour
     public PriceManager priceManager;
     public MoneyManager moneyManager;
 
-    public int priceUpgrade = 1500;
+    public SellLimonade sellLimonade;
+
+    public int priceUpgrade = 500;
 
     public void BuyUpgrade()
     {
@@ -16,20 +18,18 @@ public class Upgrade : MonoBehaviour
         {
             AcheterUpgrade();
             priceManager.priceAmount = 2000;
+            sellLimonade.argent = 20;
 
         }
         else
         {
-            // Gérer le cas où le joueur n'a pas assez d'argent
             Debug.Log("Fonds insuffisants!");
         }
     }
 
     private void AcheterUpgrade()
     {
-        // Logique pour effectuer l'achat
         moneyManager.moneyAmount -= priceUpgrade;
         Debug.Log("Amélioration effectuée!");
-        // Ajoutez ici la logique pour ce que vous achetez (par exemple, incrémentez quelque chose)
     }
 }

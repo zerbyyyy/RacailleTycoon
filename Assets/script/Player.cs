@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
 {
     public float walkSpeed = 6;
     Vector2 moveDirection ;
-    SpriteRenderer renderer;
+    new SpriteRenderer renderer;
     void Start()
     {
         

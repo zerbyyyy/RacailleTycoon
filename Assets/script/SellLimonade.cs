@@ -1,23 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SellLimonade : MonoBehaviour
 {
     public MoneyManager moneyManager;
     public PriceManager priceManager;
 
+    public int argent = 10;
+
     public void Upmoney()
     {
-        moneyManager.moneyAmount += 10;
-
-        if (moneyManager.moneyAmount >= 1000)
-        {
-            moneyManager.moneyAmount = 1000;
-            Debug.Log("Vous ne pouvez pas avoir plus de 1500$! veuillez acheter des améliorations!");
-        }
+        moneyManager.moneyAmount += argent;
     }
     void Update()
+    {
+        if (moneyManager != null)
+        {
+            moneyManager = FindObjectOfType<MoneyManager>();
+        }
+        else
+        {
+            Debug.LogError("MoneyManager non trouvé!");
+        }
+    }
+
+    void Start()
     {
         if (moneyManager != null)
         {
