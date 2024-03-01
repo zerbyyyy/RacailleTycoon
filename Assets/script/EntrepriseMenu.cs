@@ -1,18 +1,31 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class EntrepriseMenu : MonoBehaviour
+public class Menu : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject shopcanva;
+
     void Start()
     {
-        
+        shopcanva.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        
+        Debug.Log(other.name);
+        if (other.CompareTag("player"))
+        {
+            Debug.Log("rentrer2");
+            shopcanva.SetActive(true);
+        }
     }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        Debug.Log("sorti");
+        if (other.CompareTag("player"))
+        {
+            shopcanva.SetActive(false);
+        }
+    }
+    
 }

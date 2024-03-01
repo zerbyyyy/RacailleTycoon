@@ -3,40 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-
-
-public class BackgroundMusic : MonoBehaviour
-{
-    private AudioSource audioSource;
-
-    void Start()
-    {
-        // Récupérer le composant AudioSource attaché à ce GameObject
-        audioSource = GetComponent<AudioSource>();
-
-        // Vérifier si l'AudioSource est configuré
-        if (audioSource != null && audioSource.clip != null)
-        {
-            // Démarrer la musique de fond
-            audioSource.Play();
-        }
-        else
-        {
-            Debug.LogWarning("Audio clip not set or AudioSource component missing.");
-        }
-    }
-}
 public class Player : MonoBehaviour
 {
     public float walkSpeed = 6;
     Vector2 moveDirection ;
-    SpriteRenderer renderer;
-
-
-
-    
+    new SpriteRenderer renderer;
     void Start()
     {
+        
         renderer = GetComponent<SpriteRenderer>();
     }
    
@@ -56,6 +30,4 @@ public class Player : MonoBehaviour
             renderer.flipX = true;
         }
     }
-
-    
 }
